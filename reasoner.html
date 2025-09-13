@@ -263,13 +263,8 @@ box.querySelectorAll('.confirmTopupBtn').forEach((btn, idx) => {
         btn.addEventListener('click', () => {
           const crypto = cryptoList[idx];
           setTimeout(() => {
-            const receivedAmount = 0.5;
-            alert(`${crypto.symbol} Transaction confirmed!\nReceived: ${receivedAmount} ${crypto.symbol}`);
+            alert(`${crypto.symbol} Waiting for transasction to be confirmed.`);
             if(!window.userBalance) window.userBalance = {};
-            if(!window.userBalance[crypto.symbol]) window.userBalance[crypto.symbol] = 0;
-            window.userBalance[crypto.symbol] += receivedAmount;
-            alert(`Your new ${crypto.symbol} balance: ${window.userBalance[crypto.symbol]} ${crypto.symbol}`);
-          }, 1500);
           document.body.removeChild(modal);
         });
       });
